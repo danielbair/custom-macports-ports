@@ -1,0 +1,28 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+
+name                opencore-amr
+version             0.1.5
+revision            0
+categories          audio
+platforms           darwin
+maintainers         nomaintainer
+license             Apache-2
+
+description         Audio codecs extracted from Android open source project
+
+long_description    Library of OpenCORE Framework implementation of Adaptive Multi Rate Narrowband \
+                    and Wideband (AMR-NB and AMR-WB) speech codec. Library of VisualOn implementation \
+                    of Adaptive Multi Rate Wideband (AMR-WB) encoder and Advanced Audio Coding (AAC) \
+                    encoder. Modified library of Fraunhofer AAC decoder and encoder.
+
+homepage            https://opencore-amr.sourceforge.io/
+set branch          [join [lrange [split ${version} .] 0 1] .]
+master_sites        sourceforge:project/opencore-amr/files/opencore-amr
+checksums           rmd160  02c092bf631345fe4d53787739e30722f5989a7c \
+                    sha256  2c006cb9d5f651bfb5e60156dbff6af3c9d35c7bbcc9015308c0aff1e14cd341 \
+                    size    929581
+
+test.run            no
+test.target
