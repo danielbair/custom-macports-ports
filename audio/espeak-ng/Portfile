@@ -38,6 +38,7 @@ depends_build       port:rb27-ronn-ng \
                     port:libtool \
                     port:pkgconfig
 
+use_parallel_build  no
 configure.env       RONN=${prefix}/bin/ronn-2.7 KRAMDOWN=${prefix}/bin/kramdown-2.7
 configure.args      --with-extdict-ru --with-extdict-zh --with-extdict-zhy
 build.target        src/espeak-ng src/speak-ng en
