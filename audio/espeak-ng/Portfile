@@ -43,6 +43,12 @@ configure.env       RONN=${prefix}/bin/ronn-2.7 KRAMDOWN=${prefix}/bin/kramdown-
 configure.args      --with-extdict-ru --with-extdict-zh --with-extdict-zhy
 build.target        src/espeak-ng src/speak-ng en
 
+post-destroot {
+    ln -sf ${prefix}/lib/libespeak-ng.1.dylib ${prefix}/lib/libespeak.1.dylib
+    ln -sf ${prefix}/lib/libespeak-ng.a ${prefix}/lib/libespeak.a
+    ln -sf ${prefix}/lib/libespeak-ng.dylib ${prefix}/lib/libespeak.dylib
+}
+
 pre-pkg {
     xinstall -m 0755 ${filespath}/postinstall ${package.scripts}/
     reinplace -locale C "s|@PREFIX@|${prefix}|g" ${package.scripts}/postinstall
