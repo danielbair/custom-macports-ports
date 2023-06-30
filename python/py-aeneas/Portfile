@@ -10,7 +10,7 @@ categories-append   devel, audio
 platforms           darwin
 license             GPL-3+
 
-python.versions     27 35 36 37 38
+python.versions     27 35 36 37 38 39 310 311
 
 maintainers         nomaintainer
 
@@ -45,7 +45,7 @@ if {${name} ne ${subport}} {
                         port:py${python.version}-lxml \
                         port:py${python.version}-beautifulsoup4
 
-    if {${python.version} == 38} {
+    if {${python.version} >= 38} {
         patchfiles-append   patch-py38-utf8-mac.diff
         patch.args          -p1
     }
